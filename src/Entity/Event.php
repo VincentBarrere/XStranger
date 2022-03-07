@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use phpDocumentor\Reflection\DocBlock\Tags\Method;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
-#[ApiResource(
+#[ApiResourcek(
     'groups'
 )]
 class Event
