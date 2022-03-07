@@ -3,11 +3,15 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use App\Controller\EventPublishController;
 use App\Repository\EventRepository;
 use Doctrine\ORM\Mapping as ORM;
+use phpDocumentor\Reflection\DocBlock\Tags\Method;
 
 #[ORM\Entity(repositoryClass: EventRepository::class)]
-#[ApiResource]
+#[ApiResource(
+    'groups'
+)]
 class Event
 {
     #[ORM\Id]
@@ -20,6 +24,13 @@ class Event
 
     #[ORM\Column(type: 'date')]
     private $dateEvent;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private $createdAt;
+
+    public function __construct(){
+        $this->createdAt=new \DateTimeImmutable();
+    }
 
     public function getId(): ?int
     {
@@ -49,4 +60,10 @@ class Event
 
         return $this;
     }
+
+    public function getCreatedAt(): ?\DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
 }
