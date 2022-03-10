@@ -28,6 +28,9 @@ class Event
     #[ORM\Column(type: 'datetime_immutable')]
     private $createdAt;
 
+    #[ORM\Column(type: 'text')]
+    private $place;
+
     public function __construct(){
         $this->createdAt=new \DateTimeImmutable();
     }
@@ -64,6 +67,18 @@ class Event
     public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
+    }
+
+    public function getPlace(): ?string
+    {
+        return $this->place;
+    }
+
+    public function setPlace(string $place): self
+    {
+        $this->place = $place;
+
+        return $this;
     }
 
 }

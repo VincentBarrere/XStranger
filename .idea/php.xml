@@ -85,17 +85,8 @@
       <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
-<<<<<<< HEAD
       <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
-=======
-<<<<<<< HEAD
-      <path value="$PROJECT_DIR$/vendor/fakerphp/faker" />
-=======
->>>>>>> Fixtures
->>>>>>> Fixtures
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
-    <option name="suggestChangeDefaultLanguageLevel" value="false" />
-  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
 </project>
