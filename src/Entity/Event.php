@@ -31,6 +31,9 @@ class Event
     #[ORM\Column(type: 'text')]
     private $place;
 
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: 'events')]
+    private $eventCategory;
+
     public function __construct(){
         $this->createdAt=new \DateTimeImmutable();
     }
@@ -77,6 +80,18 @@ class Event
     public function setPlace(string $place): self
     {
         $this->place = $place;
+
+        return $this;
+    }
+
+    public function getEventCategory(): ?Category
+    {
+        return $this->eventCategory;
+    }
+
+    public function setEventCategory(?Category $eventCategory): self
+    {
+        $this->eventCategory = $eventCategory;
 
         return $this;
     }
